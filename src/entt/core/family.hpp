@@ -19,11 +19,10 @@ namespace entt {
  */
 template<typename...>
 class family {
-    template<typename...>
     inline static maybe_atomic_t<std::size_t> identifier;
 
     template<typename...>
-    inline static const auto inner = identifier<>++;
+    inline static const auto inner = identifier++;
 
 public:
     /*! @brief Unsigned integer type. */
