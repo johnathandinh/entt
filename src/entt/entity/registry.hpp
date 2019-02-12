@@ -175,7 +175,8 @@ public:
      * registry could decide to prepare internal data structures for it for
      * later uses.<br/>
      * Do not use this functionality to provide numeric identifiers to types at
-     * runtime.
+     * runtime, because they aren't guaranteed to be stable between different
+     * runs.
      *
      * @tparam Component Type of component to query.
      * @return Runtime numeric identifier of the given type of component.

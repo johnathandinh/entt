@@ -10,13 +10,13 @@
 #endif
 #endif
 
-LIB_EXPORT typename entt::registry<>::component_type int_type() {
+LIB_EXPORT typename entt::registry<>::component_type a_module_int_type() {
     (void)entt::registry<>::type<double>();
     (void)entt::registry<>::type<float>();
     return entt::registry<>::type<int>();
 }
 
-LIB_EXPORT typename entt::registry<>::component_type char_type() {
+LIB_EXPORT typename entt::registry<>::component_type a_module_char_type() {
     (void)entt::registry<>::type<double>();
     (void)entt::registry<>::type<float>();
     return entt::registry<>::type<char>();

@@ -11,7 +11,7 @@ namespace entt {
 
 
 /**
- * @brief Zero overhead resource identifier.
+ * @brief Zero overhead unique identifier.
  *
  * A hashed string is a compile-time tool that allows users to use
  * human-readable identifers in the codebase while using their numeric

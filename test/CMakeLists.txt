@@ -36,17 +36,21 @@ endif()
 # Test lib
 
 if(BUILD_LIB)
-    add_library(module_shared SHARED lib/module.cpp)
-    SETUP_LIBRARY_TARGET(module_shared)
+    add_library(a_module_shared SHARED lib/a_module.cpp)
+    add_library(a_module_static STATIC lib/a_module.cpp)
+    add_library(another_module_shared SHARED lib/another_module.cpp)
+    add_library(another_module_static STATIC lib/another_module.cpp)
 
-    add_library(module_static STATIC lib/module.cpp)
-    SETUP_LIBRARY_TARGET(module_static)
+    SETUP_LIBRARY_TARGET(a_module_shared)
+    SETUP_LIBRARY_TARGET(a_module_static)
+    SETUP_LIBRARY_TARGET(another_module_shared)
+    SETUP_LIBRARY_TARGET(another_module_static)
 
     SETUP_AND_ADD_TEST(lib_shared lib/lib.cpp)
-    target_link_libraries(lib_shared PRIVATE module_shared)
+    target_link_libraries(lib_shared PRIVATE a_module_shared another_module_shared)
 
     SETUP_AND_ADD_TEST(lib_static lib/lib.cpp)
-    target_link_libraries(lib_static PRIVATE module_static)
+    target_link_libraries(lib_static PRIVATE a_module_static another_module_static)
 endif()
 
 # Test mod
